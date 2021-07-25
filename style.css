@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.antibody{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 24%, rgba(2,34,189,1) 100%);
+    -webkit-box-shadow: 0px 0px 37px 4px rgba(255,255,255,0.84); 
+    box-shadow: 0px 0px 37px 4px rgba(255,255,255,0.84);
+}
+
+.antibody-circle{
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0px 0px 9px 4px rgba(255,255,255,0.8); 
+    box-shadow: 0px 0px 9px 4px rgba(255,255,255,0.8);
+}
+
+.antibody-circle--inset{
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    -webkit-box-shadow: inset 0px 0px 9px 4px rgba(255,255,255,0.8); 
+    box-shadow: inset 0px 0px 9px 4px rgba(255,255,255,0.8);
+}
+
+.content{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    transform: rotate(45deg);
+    overflow: hidden;
+    animation: animate-left 3s infinite linear;
+}
+
+.content-2{
+    transform: rotate(-45deg);
+    overflow: hidden;
+    animation: animate-rigth 3s infinite linear;
+}
+
+.line {
+    position: relative;
+    background: rgb(2,34,189);
+    background: linear-gradient(90deg, rgba(2,34,189,1) 0%, rgba(50,84,173,1) 50%, rgba(2,34,189,1) 100%);
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borde {
+    display: block;
+    content: '';
+    width: 15px;
+    height: 70px;
+}
+
+.borde--left{
+    border-radius: 50% 0 0 50%;
+    background: rgb(0,14,84);
+    background: linear-gradient(90deg, rgba(0,14,84,1) 6%, rgba(2,34,189,1) 100%);
+}
+
+.borde--rigth{
+    border-radius: 0 50% 50% 0;
+    background: rgb(2,34,189);
+    background: linear-gradient(90deg, rgba(2,34,189,1) 6%, rgba(0,14,84,1) 100%);
+}
+
+.triangle{
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid rgba(255,255,255,1);
+}
+
+.triangle--left{
+    display: inline-block;
+    width: 20px;
+    height: 35px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid rgba(255,255,255,1);
+}
+
+.arrow-rigth{
+    position: absolute;
+    left: -30px;
+}
+
+.arrow-left{
+    position: absolute;
+    right: -30px;
+}
+
+.proto{
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    background: #FF0101;
+    background: -webkit-radial-gradient(top left, #e00000, #810200);
+    background: -moz-radial-gradient(top left, #FF0101, #910301);
+    background: radial-gradient(to bottom right, #FF0101, #910301);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 0px 2px 21px -4px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 2px 21px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 2px 21px -4px rgba(0,0,0,1);
+}
+
+.proto::before{
+    position: absolute;
+    z-index: 2;
+    display: block;
+    content: '';
+
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 18px 18px rgba(255,255,255,0.8);
+    -webkit-box-shadow: 0px 2px 18px 18px rgba(255,255,255,0.8);
+    -moz-box-shadow: 0px 2px 18px 18px rgba(255,255,255,0.8);
+}
+
+.proto--hidden{
+    visibility: hidden;
+}
+
+.proto-level{
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    gap: 30px;
+}
+
+.core{
+    position: absolute;
+    width: 180px;
+    height: 180px;    
+    border-radius: 50%;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0) 13%, rgba(189,2,2,1) 26%, rgba(2,32,189,0.44021358543417366) 71%);
+}
+
+.author{
+    position: absolute;
+    color: white;
+    bottom: 0;
+    right: 0;
+    font-size: 20px;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes animate-left {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes animate-rigth {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(-180deg);
+    }
+}
